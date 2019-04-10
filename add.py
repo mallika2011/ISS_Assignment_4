@@ -2,11 +2,11 @@ from bit_4 import number_4bit
 from bit_5 import number_5bit
 
 
-bit = raw_input("Number of bits?  ")
+bit = input("Number of bits?  ")
 
-binary1 = raw_input("Enter First Binary Number  ")
+binary1 = input("Enter First Binary Number  ")
 
-binary2 = raw_input("Enter Second Binary Number  ")
+binary2 = input("Enter Second Binary Number  ")
 
 
 if int(bit) == 4:
