@@ -80,13 +80,13 @@ Step by step series to run the development env.
 First, Clone the Repository
 
 ```
-git clone https://gitlab.com/mallika2011/2018101041-introsoftwaresys
+git clone https://github.com/mallika2011/Recreating-VLabs-CSO-Experiment.git
 ```
 
 Go to the folder containing the run.py
 
 ```
-cd 2018101041-introsoftwaresys/Assignments/Assignment4/app/
+cd Recreating-VLabs-CSO-Experiment/app/
 ```
 Run the python file using python3
 
