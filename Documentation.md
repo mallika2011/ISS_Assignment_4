@@ -100,7 +100,7 @@ http://localhost:5000/introduction
 To directly view the experiment page, go to this link
 
 ```
-http://localhost:5000/exp1
+http://localhost:5000/experiment
 ```
 
 
