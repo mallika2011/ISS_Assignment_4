@@ -5,12 +5,15 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     
     <link rel="stylesheet" href="../static/css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Maven+Pro:900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Dosis:600|Maven+Pro:900" rel="stylesheet">
     
     <!-- ../static/css/styles.css"> -->
 
@@ -19,44 +22,51 @@
 </head>
 
 <body>
-    <h1 class="text-center heading">INTEGER ARITHMETIC</h1>
+    
+    <h1 class="text-center heading"> <b> INTEGER ARITHMETIC </b> </h1>
+
+    <div class="help">
+        <a href="./help"><img class="help-img" src="../static/images/help2.png" alt=""></a>
+        <a href="./experiment"><img class="help-img" src="../static/images/back.png" alt=""></a>
+
+    </div>
     
 
     <div class="left">
 
-        <button>ADD</button> <br>
-        <button>RESET</button> <br>
-        <button>SWITCH TO 5-BIT</button> <br>
+        <button id="add" class="button myButton">ADD</button> <br>
+        <button class="button myButton" onclick="location.reload();" >RESET</button> <br>
+        <a href="/exp2" class="myButton button" > SWITCH TO 5-BIT </a>
         
         <h3 class="heading res" >RESULTS</h3>
 
-        <table class="results table-responsive" id="res">
-            <tr>
-                <td>1.</td>
-                <td>Binary Rep</td>
-                <td>          </td>
-            </tr>
-            <tr>
-                <td>2.</td>
-                <td>2's comp</td>
-                <td>        </td>
-            </tr>
-            <tr>
-                <td>3.</td>
-                <td>1's comp</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td>4.</td>
-                <td>Unsigned</td>
-                <td> </td>
-            </tr>
-            <tr>
-                <td>5.</td>
-                <td>Signed</td>
-                <td> </td>
-            </tr>
-        </table>
+    <table class="results table-responsive" id="res">
+        <tr>
+            <td>1.</td>
+            <td>Binary Rep</td>
+            <td id="resbinary"> </td>
+        </tr>
+        <tr>
+            <td>2.</td>
+            <td>2's comp</td>
+            <td id="restwo"> </td>
+        </tr>
+        <tr>
+            <td>3.</td>
+            <td>1's comp</td>
+            <td id="resone"> </td>
+        </tr>
+        <tr>
+            <td>4.</td>
+            <td>Unsigned</td>
+            <td id="resunsigned"> </td>
+        </tr>
+        <tr>
+            <td>5.</td>
+            <td>Signed</td>
+            <td id="ressigned"> </td>
+        </tr>
+    </table>
 
 
 
@@ -67,9 +77,12 @@
     <div class="right">
 
         <table class="integers table-responsive" id="table">
-            <tr>
-                <td>SNO.</td> <td>BINARY REP</td> <td>2'S COMP</td> <td>1'S COMP</td> <td>UNSIGNED</td> <td>SIGNED</td>
-            </tr>
+            <thead class="thead-light">
+                <tr class="header-row">
+                <th>SNO.</th> <th>BINARY REP</th> <th>2'S COMP</th> <th>1'S COMP</th> <th>UNSIGNED</th> <th>SIGNED</th>
+                </tr>
+            </thead>
+            
             <tr id="1">
                 <td>1.</td> <td>0000</td> <td>0</td> <td>+0</td> <td>0</td> <td>+0</td>
             </tr>
@@ -95,35 +108,34 @@
                 <td>8.</td> <td>0111</td> <td>7</td> <td>7</td> <td>7</td> <td>7</td>
             </tr>
             <tr id="9">
-                <td>9.</td> <td>1000</td> <td>-8</td> <td>-7</td> <td>8</td> <td>-7</td>
+                <td>9.</td> <td>1000</td> <td>-8</td> <td>-7</td> <td>8</td> <td>-0</td>
             </tr>
             <tr id="10">
-                <td>10.</td> <td>1001</td> <td>-7</td> <td>-6</td> <td>9</td> <td>-6</td>
+                <td>10.</td> <td>1001</td> <td>-7</td> <td>-6</td> <td>9</td> <td>-1</td>
             </tr>
             <tr id="11">
-                <td>11.</td> <td>1010</td> <td>-6</td> <td>-5</td> <td>10</td> <td>-5</td>
+                <td>11.</td> <td>1010</td> <td>-6</td> <td>-5</td> <td>10</td> <td>-2</td>
             </tr>
             <tr id="12">
-                <td>12.</td> <td>1011</td> <td>-5</td> <td>4</td> <td>11</td> <td>-4</td>
+                <td>12.</td> <td>1011</td> <td>-5</td> <td>-4</td> <td>11</td> <td>-3</td>
             </tr>
             <tr id="13">
-                <td>13.</td> <td>1100</td> <td>-4</td> <td>-3</td> <td>12</td> <td>-3</td>
+                <td>13.</td> <td>1100</td> <td>-4</td> <td>-3</td> <td>12</td> <td>-4</td>
             </tr>
             <tr id="14">
-                <td>14.</td> <td>1101</td> <td>-3</td> <td>-2</td> <td>13</td> <td>-2</td>
+                <td>14.</td> <td>1101</td> <td>-3</td> <td>-2</td> <td>13</td> <td>-5</td>
             </tr>
             <tr id="15">
-                <td>15.</td> <td>1110</td> <td>-2</td> <td>-1</td> <td>14</td> <td>-1</td>
+                <td>15.</td> <td>1110</td> <td>-2</td> <td>-1</td> <td>14</td> <td>-6</td>
             </tr>
             <tr id="16">
-                <td>16.</td> <td>1111</td> <td>-1</td> <td>-0</td> <td>15</td> <td>-0</td>
+                <td>16.</td> <td>1111</td> <td>-1</td> <td>-0</td> <td>15</td> <td>-7</td>
             </tr>
 
         </table>
 
     </div>
-
-    
+   
 
 
     <!-- Optional JavaScript -->
@@ -138,6 +150,10 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
     <script src="../static/js/addition.js" ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="../static/js/addition.js"></script>
+    <script src="../static/js/jquery.js"></script>
+    <script src="../static/js/bootstrap.min.js"></script>
 
 </body>
 
