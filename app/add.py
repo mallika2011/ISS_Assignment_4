@@ -44,6 +44,7 @@ def answer(x,y):
         ans = []
 
         (bi, l1, l2, l3, l4) = a.bit4_add(list_b1, list_b2)
+        print("PASSING "+ str(bi))
         b = a.dec2bin(bi)
         ans.append(int(b))
         ans.append(l1)

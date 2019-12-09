@@ -66,7 +66,7 @@ class number_5bit:
                 b = b+'0'
             else:
                 b = b+'1'
-            val = int(val)/2
+            val = int(int(val)/2)
 
         b=b[::-1]
         return b

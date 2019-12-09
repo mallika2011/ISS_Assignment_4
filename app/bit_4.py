@@ -60,11 +60,12 @@ class number_4bit:
 
         b = ""
         while val > 0:
+            print(val)
             if(val%2== 0):
                 b = b+'0'
             else:
                 b = b+'1'
-            val = int(val)/2
+            val = int(int(val)/2)
         b=b[::-1]
         return b
 
